@@ -1,33 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    line-height: 1.6;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  ul li {
-    padding: 5px;
-    background: #f4f4f4;
-    margin: 5px 0;
-  }
-  
-  header {
-    background: #28a746;
-    padding: 1rem;
-    color: white;
-    text-align: center;
-  }
-  
   .container {
     margin: auto;
     width: 60%;
@@ -69,60 +40,20 @@
     border-radius: 5px 0 0 5px;
     background-color: rgb(235, 233, 233);
   }
-  
-  .btn {
-    width: 100%;
-    padding: 10px 5px;
-    border: 0;
-    background: #2f2d2eec;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px 0;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    opacity: 80%;
-    background: black;
-  }
-  
-  .bg-dark {
-    background: #333;
-    color: #fff;
-  }
-  
-  .error {
-    background: orangered;
-    color: #fff;
-    padding: 5px;
-    margin: 5px;
-  }
 
-  .edit {
-    width: 45px;
-    background-color: green;
-  }
-
-  .delete {
-    background-color: red; 
-    width: 65px;
-  }
-
-#notification {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 100; 
-}
-
-.toast {
-    background-color: black;
+  .btn-sm-log-sign {
+    text-decoration: none;
+    background-color: #2f2d2eec;
     color: white;
+    padding: 0.1rem 0.4rem;
     border-radius: 3px;
-    padding: 0.7rem 1.2rem;
-    margin: 0.5rem;
-    position: relative;
-}
+    cursor: pointer;
+    font-size: small;
+  }
+  
+  .btn-sm-log-sign:hover {
+    background-color: black;
+  }
 
 @media (max-width: 768px) {
   .container {
