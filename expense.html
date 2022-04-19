@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/expense.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+    </header>
+
+    <section class="container">
+        <div id="my-form">
+            <h1>Add Expense</h1>
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="date">Date</label> <br>
+                    <input type="date" id="date" class="form-control">
+                </div>
+                <div class="form-col">
+                    <label for="amount">Amount</label> <br>
+                    <input type="number" id="amount" class="form-control" placeholder="Enter Amount">
+                </div>
+                <div class="form-col">
+                    <label for="description">Description</label> <br>
+                    <input type="text" id="description" class="form-control" placeholder="Enter Description">
+                </div>
+                <div class="form-col">
+                    <label for="category">Category</label> <br>
+                    <select id="category" class="form-control">
+                        <option value="food">Food</option>
+                        <option value="petrol">Petrol</option>
+                        <option value="salary">Salary</option>
+                        <option value="apparel">Apparel</option>
+                        <option value="education">Education</option>
+                        <option value="gift">Gift</option>
+                        <option value="health">Health</option>
+                    </select>
+                </div>
+                <div class="form-col">
+                    &nbsp; <br>
+                    <button class="btn">Add Expense</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="notification"></div>
+    <script src="./js/notify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+</body>
+
+</html>

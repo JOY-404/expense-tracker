@@ -1,29 +1,15 @@
 
   .container {
     margin: auto;
-    width: 60%;
+    width: 100%;
     overflow: auto;
-    padding: 3rem 2rem;
+    padding: 2rem 5rem;
   }
   
   #my-form {
     padding: 2rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
-  
-  #my-form label {
-    display: block;
-  }
-  
-  #my-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 0;
-    border-radius: 0 5px 5px 0;
-    border: 1px solid #ccc;
-    border-left: none;
-    outline: none;
   }
 
   .input-group {
@@ -41,21 +27,9 @@
     background-color: rgb(235, 233, 233);
   }
 
-  .btn {
-    width: 100%;
-    padding: 10px 5px;
-    border: 0;
-    background: #2f2d2e;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px 0;
-    cursor: pointer;
-    font-family: inherit;
-  }
-  
   .btn-sm-log-sign {
     text-decoration: none;
-    background-color: #2f2d2e;
+    background-color: #2f2d2eec;
     color: white;
     padding: 0.1rem 0.4rem;
     border-radius: 3px;
@@ -67,8 +41,31 @@
     background-color: black;
   }
 
-@media (max-width: 768px) {
+  label {
+      font-size: 0.9rem;
+  }
+
+@media (max-width: 1055px) {
   .container {
-    width: 90%;
+    padding: 2rem 2rem;
+  }
+}
+
+@media (max-width: 955px) {
+  .form-row {
+    display: block;
+  }
+  
+  .form-col {
+    margin-top: 0.5rem;
+    margin-right: 0;
+  }
+  
+  .form-control {
+    width: 100%;
+  }
+
+  .btn {
+      width: 100%;
   }
 }

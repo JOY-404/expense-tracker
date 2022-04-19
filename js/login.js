@@ -19,6 +19,7 @@ btnLogin.addEventListener('click', () => {
         })
             .then(res => {
                 showNotification('Successfuly Logged In');
+                window.location.href = 'expense.html';
             })
             .catch(err => {
                 if (err.response) {
