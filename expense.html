@@ -14,9 +14,37 @@
 </head>
 
 <body>
+    <div class="backdrop"></div>
     <header>
+        <img src="./img/logo.png" alt="logo">
         <h1>Expense Tracker</h1>
     </header>
+    <div class="main-header">
+        <nav class="main-header__nav">
+            <button id="side-menu-toggle">☰</button>
+            <ul class="main-header__item-list">
+                <li class="main-header__item">
+                    <a class="" href="category.html">Category</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="active" href="#">Expense</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__item-list">
+            <li class="mobile-nav__item">
+                <a class="" href="category.html">Category</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a class="active" href="#">Expense</a>
+            </li>
+        </ul>
+    </nav>
+    <div style="justify-content: right; display: flex;">
+        <a id="buy-premium" href="#">Buy Premium Membership</a>
+    </div>
 
     <section class="container">
         <div id="my-form">
@@ -46,9 +74,13 @@
         </div>
     </section>
     <div id="notification"></div>
+    <script src="./js/theme.js"></script>
+    <script src="./js/nav.js"></script>
     <script src="./js/notify.js"></script>
     <script src="./js/expense.js"></script>
+    <script src="./js/razorpay.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         document.getElementById('date').value = new Date().toISOString().substring(0, 10);
     </script>

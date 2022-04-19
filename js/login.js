@@ -19,6 +19,10 @@ btnLogin.addEventListener('click', () => {
         })
             .then(res => {
                 //showNotification('Successfuly Logged In');
+                localStorage.setItem('name', res.data.name);
+                localStorage.setItem('email', res.data.email);
+                localStorage.setItem('phone', res.data.phone);
+                localStorage.setItem('theme', res.data.theme); // find another way - i used it to load dark theme faster
                 localStorage.setItem('token', res.data.token);
                 window.location.href = 'expense.html';
             })
