@@ -30,7 +30,7 @@
   
 #notification {
     position: fixed;
-    bottom: 0;
+    top: 5.5rem;
     right: 0;
     z-index: 100; 
 }
@@ -47,7 +47,7 @@
   .btn {
     padding: 6px 9px;
     border: 0;
-    background: #2f2d2e;
+    background: #343a40;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;

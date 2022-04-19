@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/expense.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+    </header>
+
+    <section class="container">
+        <div id="my-form">
+            <h1>Add Category</h1>
+            <div class="form-row" style="margin-top: 1rem;">
+                <div class="form-col">
+                    <input type="text" id="category" class="form-control" placeholder="Enter Category">
+                </div>
+                <div class="form-col">
+                    <button class="btn btn-add-category">Add Category</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="notification"></div>
+    <script src="./js/notify.js"></script>
+    <script src="./js/category.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+</body>
+
+</html>

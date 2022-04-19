@@ -35,6 +35,7 @@ btnSignup.addEventListener('click', () => {
                     showNotification('User already exists, Please Login', true);
                 }
                 else {
+                    clearAll();
                     showNotification('Successfuly Signed Up');
                 }
             })
@@ -50,4 +51,11 @@ btnSignup.addEventListener('click', () => {
                 }
             });
     }
-})
+});
+
+function clearAll() {
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('password').value = '';
+}

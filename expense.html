@@ -36,26 +36,22 @@
                 </div>
                 <div class="form-col">
                     <label for="category">Category</label> <br>
-                    <select id="category" class="form-control">
-                        <option value="food">Food</option>
-                        <option value="petrol">Petrol</option>
-                        <option value="salary">Salary</option>
-                        <option value="apparel">Apparel</option>
-                        <option value="education">Education</option>
-                        <option value="gift">Gift</option>
-                        <option value="health">Health</option>
-                    </select>
+                    <select id="category" class="form-control"></select>
                 </div>
                 <div class="form-col">
                     &nbsp; <br>
-                    <button class="btn">Add Expense</button>
+                    <button class="btn btn-add-expense">Add Expense</button>
                 </div>
             </div>
         </div>
     </section>
     <div id="notification"></div>
     <script src="./js/notify.js"></script>
+    <script src="./js/expense.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script>
+        document.getElementById('date').value = new Date().toISOString().substring(0, 10);
+    </script>
 </body>
 
 </html>

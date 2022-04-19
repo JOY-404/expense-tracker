@@ -18,7 +18,8 @@ btnLogin.addEventListener('click', () => {
             password: password
         })
             .then(res => {
-                showNotification('Successfuly Logged In');
+                //showNotification('Successfuly Logged In');
+                localStorage.setItem('token', res.data.token);
                 window.location.href = 'expense.html';
             })
             .catch(err => {
