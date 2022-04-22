@@ -1,7 +1,8 @@
 const baseURL = 'http://localhost:4000';
 
 const btnSignup = document.querySelector('.btn-signup');
-btnSignup.addEventListener('click', () => {
+btnSignup.addEventListener('click', (e) => {
+    e.preventDefault();
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;

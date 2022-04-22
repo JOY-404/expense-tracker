@@ -1,7 +1,8 @@
 const baseURL = 'http://localhost:4000';
 
 const btnLogin = document.querySelector('.btn-signup');
-btnLogin.addEventListener('click', () => {
+btnLogin.addEventListener('click', (e) => {
+    e.preventDefault();
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     if (email.trim() == '') {
@@ -23,6 +24,40 @@ btnLogin.addEventListener('click', () => {
                 localStorage.setItem('userDetails', JSON.stringify(res.data.userDetails));
                 localStorage.setItem('token', res.data.token);
                 window.location.replace('dashboard.html');
+            })
+            .catch(err => {
+                if (err.response) {
+                    showNotification(`${err.response.data.msg}`, true);
+                }
+                else if (err.request) {
+                    showNotification('Error: No Response From Server', true);
+                }
+                else {
+                    showNotification(err.message, true);
+                }
+            });
+    }
+});
+
+const btnForgot = document.querySelector('.forgot-pw');
+btnForgot.addEventListener('click', () => {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('password-form').style.display = 'block';
+});
+
+const btnReset = document.querySelector('.btn-reset');
+btnReset.addEventListener('click', () => {
+    e.preventDefault();
+    const email = document.getElementById('reset-email').value;
+    if (email.trim() == '') {
+        showNotification('Email ID is Mandatory', true);
+        document.getElementById('reset-email').focus();
+    }
+    else {
+        axios.post(`${baseURL}/password/forgotpassword`, { email: email })
+            .then(res => {
+                //showNotification('Successfuly Logged In');
+                console.log(res.data);
             })
             .catch(err => {
                 if (err.response) {

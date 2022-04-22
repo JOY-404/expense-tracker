@@ -6,17 +6,17 @@
     padding: 3rem 2rem;
   }
   
-  #my-form {
+  .my-form {
     padding: 2rem;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
   
-  #my-form label {
+  .my-form label {
     display: block;
   }
   
-  #my-form input {
+  .my-form input {
     width: 100%;
     padding: 8px;
     margin-bottom: 0;

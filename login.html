@@ -19,22 +19,38 @@
         <h1>Expense Tracker</h1>
     </header>
 
-    <section class="container">
-        <div id="my-form">
+    <section class="container" id="login-form" style="display: block;">
+        <form class="my-form">
             <h1>LOGIN</h1>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope" style="font-size:small;"></i></span>
-                <input type="email" id="email" placeholder="Enter Email ID" class="form-control log-tb">
+                <input type="email" id="email" autocomplete="email" placeholder="Enter Email ID" class="form-control log-tb">
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock" style="padding: 0 1.5px;"></i></span>
-                <input type="password" id="password" placeholder="Enter Password" class="form-control log-tb">
+                <input type="password" id="password" autocomplete="current-password" placeholder="Enter Password" class="form-control log-tb">
             </div>
             <button class="btn btn-signup">LOGIN</button>
             <div class="center">
+                <a class="btn-sm-log-sign forgot-pw" href="#">Forgot Password?</a> <br>
                 <span>Doesn't have an account? </span><a class="btn-sm-log-sign" href="./signup.html">Sign Up</a>
             </div>
-        </div>
+        </form>
+    </section>
+
+    <section class="container" id="password-form" style="display: none;">
+        <form class="my-form">
+            <h1>Forgot Password</h1>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope" style="font-size:small;"></i></span>
+                <input type="email" id="reset-email" placeholder="Enter your Email" class="form-control log-tb">
+            </div>
+            <button class="btn btn-reset">RESET PASSWORD</button>
+            <div class="center">
+                <a class="btn-sm-log-sign" href="./login.html">Sign In</a>
+                <a class="btn-sm-log-sign" href="./signup.html">Sign Up</a>
+            </div>
+        </form>
     </section>
     <div id="notification"></div>
     <script src="./js/login.js"></script>
