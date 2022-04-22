@@ -1,5 +1,5 @@
 
-function showNotification(message, isError = false) {
+function showNotification(message, isError = false, time = 3000) {
     // Gives a short toast
     const notification = document.getElementById('notification');
     const notice = document.createElement('div');
@@ -10,5 +10,5 @@ function showNotification(message, isError = false) {
         notice.innerHTML = `<i class="fa fa-check-circle fa-lg" aria-hidden="true" style='color: #99C24D;'></i>&nbsp;&nbsp;${message}`;
 
     notification.insertBefore(notice, notification.firstChild);
-    setTimeout(() => notice.remove(), 3000);
+    setTimeout(() => notice.remove(), time);
 }

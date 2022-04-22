@@ -46,7 +46,7 @@ btnForgot.addEventListener('click', () => {
 });
 
 const btnReset = document.querySelector('.btn-reset');
-btnReset.addEventListener('click', () => {
+btnReset.addEventListener('click', (e) => {
     e.preventDefault();
     const email = document.getElementById('reset-email').value;
     if (email.trim() == '') {
@@ -54,14 +54,16 @@ btnReset.addEventListener('click', () => {
         document.getElementById('reset-email').focus();
     }
     else {
-        axios.post(`${baseURL}/password/forgotpassword`, { email: email })
+        axios.post(`${baseURL}/auth/password/forgotpassword`, { email: email })
             .then(res => {
-                //showNotification('Successfuly Logged In');
-                console.log(res.data);
+                document.getElementById('reset-email').value = '';
+                document.getElementById('login-form').style.display = 'block';
+                document.getElementById('password-form').style.display = 'none';
+                showNotification('You will receive an email with instructions on how to reset your password in a few minutes.', false, 6000);
             })
             .catch(err => {
                 if (err.response) {
-                    showNotification(`${err.response.data.msg}`, true);
+                    showNotification(`${err.response.data}`, true);
                 }
                 else if (err.request) {
                     showNotification('Error: No Response From Server', true);
@@ -71,4 +73,5 @@ btnReset.addEventListener('click', () => {
                 }
             });
     }
-})
+});
+
