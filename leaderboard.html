@@ -8,15 +8,14 @@
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/expense.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     <!-- font awesome -->
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div id="loading">
-        <div class="loader"></div>
-    </div>
+    <div id="loading"><div class="loader"></div></div>
     <div class="backdrop"></div>
     <header>
         <img src="./img/logo.png" alt="logo">
@@ -30,13 +29,13 @@
                     <a class="" href="dashboard.html">Dashboard</a>
                 </li>
                 <li class="main-header__item">
-                    <a class="active" href="#">Category</a>
+                    <a class="" href="category.html">Category</a>
                 </li>
                 <li class="main-header__item">
                     <a class="" href="expense.html">Expense</a>
                 </li>
                 <li class="main-header__item">
-                    <a class="" href="leaderboard.html">Leaderboard</a>
+                    <a class="active" href="#">Leaderboard</a>
                 </li>
             </ul>
         </nav>
@@ -47,13 +46,13 @@
                 <a class="" href="dashboard.html">Dashboard</a>
             </li>
             <li class="mobile-nav__item">
-                <a class="active" href="#">Category</a>
+                <a class="" href="category.html">Category</a>
             </li>
             <li class="mobile-nav__item">
                 <a class="" href="expense.html">Expense</a>
             </li>
             <li class="mobile-nav__item">
-                <a class="" href="leaderboard.html">Leaderboard</a>
+                <a class="active" href="#">Leaderboard</a>
             </li>
         </ul>
     </nav>
@@ -61,47 +60,42 @@
         <a id="buy-premium" href="#">Buy Premium Membership</a>
     </div>
 
-    <section class="container">
-        <div class="my-form">
-            <h1>Add Category</h1>
-            <div class="form-row" style="margin-top: 1rem;">
-                <div class="form-col">
-                    <input type="text" id="category" class="form-control" placeholder="Enter Category">
+    <section id="leaderboard" class="container">
+        <div class="my-form" style="display: flex; flex-direction: column; align-items: center;">
+            <h1>LEADERBOARD</h1>
+        </div>
+    </section>
+    <div id="notification"></div>
+    <div class="popup-container">
+        <div class="popup">
+            <button id="close">x</button>
+            <div class="popup-content">
+                <h1>Janmejoy Sahoo</h1>
+                <div class="tbl-row tbl-header">
+                    <span class="tbl-col tbl-col4">Category</span>
+                    <span class="tbl-col tbl-col5">Expenses</span>
                 </div>
-                <div class="form-col">
-                    <input type="hidden" value="" id="categoryId">
-                    <button class="btn btn-add-category">Add Category</button>
+                <div class="tbl-items">
+                    <div class="tbl-row">
+                        <span class="tbl-col tbl-col4">Food</span>
+                        <span class="tbl-col tbl-col5">₹&nbsp;234.00</span>
+                    </div>
+                    <div class="tbl-row">
+                        <span class="tbl-col tbl-col4">Travel</span>
+                        <span class="tbl-col tbl-col5">₹&nbsp;1255.00</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="container" style="visibility: hidden;">
-        <div class="my-form">
-            <ul id="cat-list">
-                <!-- <li class="expense-list-item expense-header">
-                    <span class="cat-cat">Category</span>
-                    <span class="tbl-edit-del"></span>
-                </li>
-                <li class="expense-list-item">
-                    <span class="cat-cat">Food</span>
-                    <span class="tbl-edit-del">
-                        <i class="fa fa-edit tbl-edit"></i>
-                        <i class="fa fa-trash-o tbl-delete"></i>
-                    </span>
-                </li> -->
-            </ul>
-        </div>
-    </section>
-
-    <div id="notification"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="./js/razorpay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="./js/nav.js"></script>
     <script src="./js/themeNonLoader.js"></script>
+    <script src="./js/nav.js"></script>
     <script src="./js/notify.js"></script>
-    <script src="./js/category.js"></script>
+    <script src="./js/leaderboard.js"></script>
 </body>
 
 </html>

@@ -3,11 +3,14 @@ const token = localStorage.getItem('token');
 const btnPremium = document.getElementById('buy-premium');
 btnPremium.addEventListener('click', () => {
     //alert(token);
+    loader.classList.remove('display-none');
     axios.post(`${baseURL}/user/create-premium-order`, {}, { headers: { 'Authorization': token } })
         .then(res => {
+            loader.classList.add('display-none');
             //console.log(2);
             const order = res.data.pmtGtwyOrder;
             //console.log(order);
+            const userDetails = JSON.parse(localStorage.getItem('userDetails'));
             let options = {
                 "key": "rzp_test_BVaFJ5t21b1sif", // Enter the Key ID generated from the Dashboard
                 "amount": order.amount_due , // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -17,9 +20,9 @@ btnPremium.addEventListener('click', () => {
                 "order_id": order.id, 
                 "handler": handleSuccess,
                 "prefill": {
-                    "name": localStorage.getItem('name'),
-                    "email": localStorage.getItem('email'),
-                    "contact": localStorage.getItem('phone')
+                    "name": userDetails.name,
+                    "email": userDetails.email,
+                    "contact": userDetails.phone
                 },
                 "theme": {
                     "color": "#28a746"
@@ -30,6 +33,7 @@ btnPremium.addEventListener('click', () => {
             rzp1.open();
         })
         .catch(err => {
+            loader.classList.add('display-none');
             if (err.response) {
                 // if (err.response.status == 401) {
                 //     // token invalid - go to login page
@@ -52,20 +56,22 @@ btnPremium.addEventListener('click', () => {
 
 function handleSuccess(response) {
     //console.log(response.razorpay_payment_id);
+    loader.classList.remove('display-none');
     axios.post(`${baseURL}/user/rzpay-success`, {
         rzpay_payment_id: response.razorpay_payment_id,
         rzpay_order_id: response.razorpay_order_id,
         rzpay_signature: response.razorpay_signature
     }, { headers: { 'Authorization': token } })
         .then(res => {
+            loader.classList.add('display-none');
             // change account to Premium
             localStorage.setItem('token', res.data.token);
-            localStorage.setItem('theme', res.data.theme);
             document.body.classList.add('dark');
             document.getElementById('buy-premium').style.display = 'none';
             showNotification('Transaction Successful');
         })
         .catch(err => {
+            loader.classList.add('display-none');
             if (err.response) {
                 if (err.response.status == 401) {
                     // token invalid - go to login page

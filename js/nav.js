@@ -1,3 +1,4 @@
+const baseURL = 'http://localhost:4000';
 
 // Navigation - hamburger
 const backdrop = document.querySelector('.backdrop');

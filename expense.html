@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
     <div class="backdrop"></div>
     <header>
         <img src="./img/logo.png" alt="logo">
@@ -24,10 +27,16 @@
             <button id="side-menu-toggle">☰</button>
             <ul class="main-header__item-list">
                 <li class="main-header__item">
+                    <a class="" href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="main-header__item">
                     <a class="" href="category.html">Category</a>
                 </li>
                 <li class="main-header__item">
                     <a class="active" href="#">Expense</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="" href="leaderboard.html">Leaderboard</a>
                 </li>
             </ul>
         </nav>
@@ -35,10 +44,16 @@
     <nav class="mobile-nav">
         <ul class="mobile-nav__item-list">
             <li class="mobile-nav__item">
+                <a class="" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="mobile-nav__item">
                 <a class="" href="category.html">Category</a>
             </li>
             <li class="mobile-nav__item">
                 <a class="active" href="#">Expense</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a class="" href="leaderboard.html">Leaderboard</a>
             </li>
         </ul>
     </nav>
@@ -47,7 +62,7 @@
     </div>
 
     <section class="container">
-        <div id="my-form">
+        <div class="my-form">
             <h1>Add Expense</h1>
             <div class="form-row">
                 <div class="form-col">
@@ -67,23 +82,47 @@
                     <select id="category" class="form-control"></select>
                 </div>
                 <div class="form-col">
-                    &nbsp; <br>
+                    <input type="hidden" value="" id="expenseId"> <br>
                     <button class="btn btn-add-expense">Add Expense</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="container" style="visibility: hidden;">
+        <div class="my-form">
+            <ul id="expense-list">
+                <!-- <li class="expense-list-item expense-header">
+                    <span class="exp-date">Date</span>
+                    <span class="exp-cat">Category</span>
+                    <span class="exp-desc">Description</span>
+                    <span class="exp-amt">Amount</span>
+                    <span class="tbl-edit-del"></span>
+                </li>
+                <li id='exp1' class="expense-list-item">
+                    <span class="exp-date">20-Apr-2022</span>
+                    <span class="exp-cat">Food</span>
+                    <span class="exp-desc">Lunch with Friends</span>
+                    <span class="exp-amt">₹&nbsp;250.00</span>
+                    <span class="tbl-edit-del">
+                        <i class="fa fa-edit tbl-edit"></i>
+                        <i class="fa fa-trash-o tbl-delete"></i>
+                        <input type="hidden" name="" class="exp-cat-id" value="10">
+                    </span>
+                </li> -->
+            </ul>
+        </div>
+    </section>
+    
     <div id="notification"></div>
-    <script src="./js/theme.js"></script>
-    <script src="./js/nav.js"></script>
-    <script src="./js/notify.js"></script>
-    <script src="./js/expense.js"></script>
+
     <script src="./js/razorpay.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
-        document.getElementById('date').value = new Date().toISOString().substring(0, 10);
-    </script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/themeNonLoader.js"></script>
+    <script src="./js/notify.js"></script>
+    <script src="./js/expense.js"></script>
 </body>
 
 </html>

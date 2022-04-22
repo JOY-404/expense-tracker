@@ -1,7 +1,6 @@
 const loader = document.getElementById('loading');
 
 if (sessionStorage.getItem('isPremium')) {
-    loader.classList.add('display-none');
     if (sessionStorage.getItem('isPremium') === 'true') {
         document.body.classList.add('dark');
         document.getElementById('buy-premium').style.display = 'none';
@@ -15,8 +14,7 @@ else {
             if (res.data.isPremium) {
                 document.body.classList.add('dark');
                 document.getElementById('buy-premium').style.display = 'none';
-            } 
-            loader.classList.add('display-none');
+            }
         })
         .catch(err => {
             if (err.response) {

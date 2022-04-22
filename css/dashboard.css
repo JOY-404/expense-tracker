@@ -1,0 +1,59 @@
+
+.tbl-header {
+  font-size:1.1rem;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+.tbl-row {
+  display: flex;
+}
+
+.tbl-row.active {
+    background-color: #555;
+}
+
+.tbl-col {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.tbl-col1 {
+  width: 10%;
+  justify-content: center;
+}
+
+.tbl-col2 {
+  width: 60%;
+  justify-content: center;
+}
+
+.get-expense {
+  cursor: pointer;
+}
+
+.tbl-col3 {
+  width: 30%;
+  justify-content: right;
+}
+
+.tbl-col4 {
+  width: 75%;
+}
+
+.tbl-col5 {
+  width: 25%;
+  justify-content: right;
+}
+
+.leader-tbl {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .leader-tbl {
+        width: 100%;
+    }
+}
