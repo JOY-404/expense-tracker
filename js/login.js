@@ -1,5 +1,11 @@
 const baseURL = 'http://localhost:4000';
 
+// If password has been changed
+location.search.substring(1).split("&").forEach(item => { 
+    if(item.split("=")[0] == 'pr')
+        showNotification('Your password has been changed successfully.', false, 6000);
+});
+
 const btnLogin = document.querySelector('.btn-signup');
 btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
@@ -54,7 +60,7 @@ btnReset.addEventListener('click', (e) => {
         document.getElementById('reset-email').focus();
     }
     else {
-        axios.post(`${baseURL}/auth/password/forgotpassword`, { email: email })
+        axios.post(`${baseURL}/password/forgotpassword`, { email: email })
             .then(res => {
                 document.getElementById('reset-email').value = '';
                 document.getElementById('login-form').style.display = 'block';

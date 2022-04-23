@@ -140,14 +140,15 @@ btnAddCategory.addEventListener('click', () => {
 
 // edit/delete category
 catList.addEventListener('click', (e) => {
-    if (e.target.className.includes('cat-edit')) {
+    console.log(123);
+    if (e.target.className.includes('tbl-edit')) {
         // edit category
         const catLI = e.target.parentNode.parentNode;
         categoryId.value = catLI.id.substr(3);
         document.getElementById('category').value = catLI.querySelector('.cat-cat').innerText;
         document.querySelector('.btn-add-category').innerText = 'Update Category';
     } 
-    else if (e.target.className.includes('cat-delete')) {
+    else if (e.target.className.includes('tbl-delete')) {
         // delete category
         if (confirm('Are you sure to delete this category ?')) {
             const catLI = e.target.parentNode.parentNode;
